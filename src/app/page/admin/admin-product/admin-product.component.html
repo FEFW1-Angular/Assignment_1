@@ -1,1 +1,18 @@
-<p>admin-product works!</p>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Tên sản phẩm</th>
+        <th scope="col">Price</th>
+        <th scope="col">Ảnh</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products; index as i">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ product.name }}</td>
+        <td>{{ product.price }}</td>
+        <td><img [src]="product.img" /></td>
+      </tr>
+    </tbody>
+  </table>
