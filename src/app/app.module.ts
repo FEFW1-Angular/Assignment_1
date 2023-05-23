@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +15,8 @@ import { PageNotFoundComponent } from './page/page-not-found/page-not-found.comp
 import { AdminProductComponent } from './page/admin/admin-product/admin-product.component';
 import { AdminProductAddComponent } from './page/admin/admin-product-add/admin-product-add.component';
 import { AdminProductEditComponent } from './page/admin/admin-product-edit/admin-product-edit.component';
+import { BaseNavComponent } from './components/base-nav/base-nav.component';
+import { AdminNavComponent } from './components/admin-nav/admin-nav.component';
 
 @NgModule({
   declarations: [
@@ -26,11 +30,15 @@ import { AdminProductEditComponent } from './page/admin/admin-product-edit/admin
     PageNotFoundComponent,
     AdminProductComponent,
     AdminProductAddComponent,
-    AdminProductEditComponent
+    AdminProductEditComponent,
+    BaseNavComponent,
+    AdminNavComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
