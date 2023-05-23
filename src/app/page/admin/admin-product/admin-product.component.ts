@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { IProduct } from 'src/app/interfaces/Product';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-admin-product',
@@ -7,11 +8,15 @@ import { IProduct } from 'src/app/interfaces/Product';
   styleUrls: ['./admin-product.component.scss']
 })
 export class AdminProductComponent {
-  @Input() products: IProduct[] = [];
-  @Output() onRemove = new EventEmitter<number>();
+  products: IProduct[] = [];
 
-  removeItem(id: any) {
-    this.onRemove.emit(id)
-    // this.products = this.products.filter((item) => item._id !== id);
+  constructor(private productService: ProductService) {
+    this.productService.getProducts().subscribe(data => {
+      this.products = data
+    }, error => {
+      console.log(error.message)
+    })
   }
+
+  
 }

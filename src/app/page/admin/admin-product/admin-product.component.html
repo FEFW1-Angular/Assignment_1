@@ -1,3 +1,4 @@
+<button class="btn btn-primary" type="submit" routerLink="add">Thêm mới</button>
 <table class="table">
     <thead>
       <tr>
@@ -5,6 +6,7 @@
         <th scope="col">Tên sản phẩm</th>
         <th scope="col">Price</th>
         <th scope="col">Ảnh</th>
+        <th scope="col">Chức năng</th>
       </tr>
     </thead>
     <tbody>
@@ -13,6 +15,9 @@
         <td>{{ product.name }}</td>
         <td>{{ product.price }}</td>
         <td><img [src]="product.img" /></td>
+        <td>
+          <button class="btn btn-danger" (click)="removeItem(product.id)!">Xóa</button>
+      </td>
       </tr>
     </tbody>
   </table>
