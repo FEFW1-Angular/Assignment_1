@@ -17,6 +17,12 @@ export class AdminProductComponent {
       console.log(error.message)
     })
   }
+  
+  removeItem(id: any) {
+    this.productService.deleteProduct(id).subscribe(() => {
+      console.log('Delete Success')
+    })
+  }
 
   
 }
