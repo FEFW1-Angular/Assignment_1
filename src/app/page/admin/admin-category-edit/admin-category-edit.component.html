@@ -1,0 +1,24 @@
+<form (ngSubmit)="onHandleUpdate()">
+    <div class="mb-3">
+        <input
+            type="text"
+            [(ngModel)]="category.name"
+            name="name"
+            placeholder="Tên"
+            class="form-control"
+        />
+    </div>
+    <div class="mb-3">
+        <input
+            type="text"
+            [(ngModel)]="category.img"
+            name="img"
+            placeholder="Ảnh"
+            class="form-control"
+        />
+    </div>
+
+    <button type="submit" class="btn btn-primary bg-block btn-lg">
+        Sửa
+    </button>
+</form>

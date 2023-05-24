@@ -1,0 +1,22 @@
+<button class="btn btn-primary" type="submit" routerLink="add">Thêm mới</button>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Tên Danh mục</th>
+        <th scope="col">Ảnh</th>
+        <th scope="col">Chức năng</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let category of categorys; index as i">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ category.name }}</td>
+        <td><img [src]="category.img" /></td>
+        <td>
+          <button class="btn btn-danger " (click)="removeItem(category.id)!">Xóa</button>
+          <button class="btn btn-warning" routerLink="{{ category.id }}/edit" >Sửa</button>
+      </td>
+      </tr>
+    </tbody>
+  </table>
