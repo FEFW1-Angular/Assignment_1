@@ -1,6 +1,5 @@
-export interface IProduct {
+export interface ICategory {
     id?: number;
     name: string;
-    price: number;
     img?: string
 }

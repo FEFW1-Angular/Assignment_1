@@ -17,6 +17,9 @@ import { AdminProductAddComponent } from './page/admin/admin-product-add/admin-p
 import { AdminProductEditComponent } from './page/admin/admin-product-edit/admin-product-edit.component';
 import { BaseNavComponent } from './components/base-nav/base-nav.component';
 import { AdminNavComponent } from './components/admin-nav/admin-nav.component';
+import { AdminCategoryComponent } from './page/admin/admin-category/admin-category.component';
+import { AdminCategoryAddComponent } from './page/admin/admin-category-add/admin-category-add.component';
+import { AdminCategoryEditComponent } from './page/admin/admin-category-edit/admin-category-edit.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { AdminNavComponent } from './components/admin-nav/admin-nav.component';
     AdminProductAddComponent,
     AdminProductEditComponent,
     BaseNavComponent,
-    AdminNavComponent
+    AdminNavComponent,
+    AdminCategoryComponent,
+    AdminCategoryAddComponent,
+    AdminCategoryEditComponent
   ],
   imports: [
     BrowserModule,
