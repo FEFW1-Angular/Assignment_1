@@ -1,11 +1,16 @@
+<<<<<<< Updated upstream
 <div class="alert alert-info" role="alert">
     THÊM MỚI DANH MỤC
   </div>
 <form (ngSubmit)="onHandleAdd()">
+=======
+
+<form (ngSubmit)="onHandleSubmit()" [formGroup]="categoryForm">
+>>>>>>> Stashed changes
     <div class="mb-3">
         <input
             type="text"
-            [(ngModel)]="category.name"
+            formControlName="name"
             name="name"
             placeholder="Tên"
             class="form-control"
@@ -14,14 +19,14 @@
     <div class="mb-3">
         <input
             type="text"
-            [(ngModel)]="category.img"
+            formControlName="img"
             name="img"
             placeholder="Ảnh"
             class="form-control"
         />
     </div>
 
-    <button type="submit" class="btn btn-primary bg-block btn-lg">
-        Thêm Danh mục
+    <button type="submit" [disabled]="!categoryForm.valid" class="btn btn-primary bg-block btn-lg">
+        Thêm sản phẩm
     </button>
 </form>
