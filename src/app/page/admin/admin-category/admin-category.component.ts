@@ -17,11 +17,17 @@ export class AdminCategoryComponent {
       console.log(error.message)
     })
   }
+  removedItems: ICategory[] = [];
 
   removeItem(id: any) {
-    this.categoryService.deleteCategory(id).subscribe(() => {
-      console.log('Delete Success')
-    })
-  }
+  this.categoryService.deleteCategory(id).subscribe(() => {
+    console.log('Delete Success');
+    const removedItem = this.categorys.find(item => item.id === id);
+    if (removedItem) {
+      this.removedItems.push(removedItem);
+      this.categorys = this.categorys.filter(item => item.id !== id);
+    }
+  });
+}
 
 }

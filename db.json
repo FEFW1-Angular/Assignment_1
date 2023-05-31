@@ -1,17 +1,4 @@
 {
-  "products": [
-    {
-      "id": 1,
-      "name": "Product 1",
-      "price": 1000,
-      "img": "https://picsum.photos/200/200"
-    }
-  ],
-  "categorys": [
-    {
-      "id": 1,
-      "name": "Category 1",
-      "img": "https://picsum.photos/200/200"
-    }
-  ]
+  "products": [],
+  "categorys": []
 }

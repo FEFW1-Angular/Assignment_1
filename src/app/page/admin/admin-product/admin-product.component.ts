@@ -9,6 +9,7 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class AdminProductComponent {
   products: IProduct[] = [];
+  removedProducts: IProduct[] = [];
 
   constructor(private productService: ProductService) {
     this.productService.getProducts().subscribe(data => {
@@ -19,10 +20,15 @@ export class AdminProductComponent {
   }
   
   removeItem(id: any) {
-    this.productService.deleteProduct(id).subscribe(() => {
-      console.log('Delete Success')
-    })
-  }
+  this.productService.deleteProduct(id).subscribe(() => {
+    console.log('Delete Success');
+    const removedProduct = this.products.find(product => product.id === id);
+    if (removedProduct) {
+      this.removedProducts.push(removedProduct);
+      this.products = this.products.filter(product => product.id !== id);
+    }
+  });
+}
 
   
 }
