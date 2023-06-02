@@ -11,7 +11,7 @@ const productSchema = Joi.object(
             "any.required": 'Trường "Price" là bắt buộc',
         }),
         categoryId: Joi.string().required().messages({
-            "string.empty": "danh mục không được để trống",
+            "string.empty": "Danh mục không được để trống",
             "any.required": 'Trường "danh mục" là bắt buộc',
         })
     }   
