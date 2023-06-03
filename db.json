@@ -13,5 +13,21 @@
       "img": "anhhhhhhhhhh",
       "id": 1
     }
+  ],
+  "users": [
+    {
+      "username": "taikhoan1234",
+      "password": "matkhau12345",
+      "email": "email@gmail.com",
+      "role": "",
+      "id": 1
+    },
+    {
+      "username": "taikhoanmoi",
+      "password": "matkhaumoi",
+      "email": "emailmoi@gmail.com",
+      "role": "",
+      "id": 2
+    }
   ]
 }
