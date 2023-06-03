@@ -13,13 +13,16 @@ import { AdminProductEditComponent } from './page/admin/admin-product-edit/admin
 import { AdminCategoryComponent } from './page/admin/admin-category/admin-category.component';
 import { AdminCategoryAddComponent } from './page/admin/admin-category-add/admin-category-add.component';
 import { AdminCategoryEditComponent } from './page/admin/admin-category-edit/admin-category-edit.component';
+import { SignupPageComponent } from './page/signup-page/signup-page.component';
 
 const routes: Routes = [
   { path: "", component: BaseLayoutComponent, children: [
     { path: "", redirectTo: "home", pathMatch: "full" },
     { path: "home", component: HomePageComponent },
     { path: "product", component: ProductPageComponent },
-    { path: "product/:id", component: ProductDetailPageComponent }
+    { path: "product/:id", component: ProductDetailPageComponent },
+    { path: "signup", component: SignupPageComponent }
+
   ]},
 
   { path: "admin", component: AdminLayoutComponent, children: [
