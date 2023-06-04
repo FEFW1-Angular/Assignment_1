@@ -1,1 +1,60 @@
-<p>product-detail-page works!</p>
+<section class="productDetail-review">
+    <div class="productDetail">
+        <div class="container-xl">
+            <div class="row">
+                <div class="col-lg-5 d-flex align-items-center">
+                  <img src="https://picsum.photos/200/200" alt="" class="img-fluid w-100 h-100">
+                 </div>
+                <div class="col-lg-7">
+                    <div class="productDetail-infor">
+                        <h3 *ngIf="product">{{ product.name }}</h3>
+                        <div class="productDetail-price" *ngIf="product">{{ product.price }}
+                            <span>VNĐ</span>
+                          </div>
+                        <div class="d-flex align-items-center mb-4 pt-2">
+                            <div class="input-group quantity mr-3" style="width: 130px;">
+                                <input type="number" class="form-control text-center" value="1" min="1" placeholder="Số lượng">
+                            </div>
+                            <button class="btn btn-danger px-3 align-items-center d-flex " style="margin-left: 10px;"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-plus align-self-center mr-2" style="margin-right: 4px;" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z"/>
+                                <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
+                            </svg> 
+                            Buy now</button>
+                        </div>
+                        <div class="productDetail-description">
+                            <h6>Mô tả </h6>
+                            <p>Bánh Kem Là Một Loại Món Tráng Miệng Ngọt Ngào, Hấp Dẫn Và Phổ Biến Trên Thế Giới. Nó Được Tạo Thành Từ Các Lớp Bánh Mềm Và Kem Tươi, Kết Hợp Với Những Thành Phần Khác Như Mứt, Trái Cây, Sô-Cô-La, Và Hương Liệu Tùy Ý. Bánh Kem Có Nhiều Hình Dạng Và Kích Thước Khác Nhau, Từ Những Chiếc Bánh Nhỏ Đơn Giản Đến Những Tác Phẩm Nghệ Thuật Phức Tạp. Trên Bề Mặt Bánh Kem Thường Được Trang Trí Bằng Kem, Hoa Quả, Kẹo, Bông Hoa Và Các Chi Tiết Sáng Tạo Khác. Vị Ngọt Ngào, Mềm Mịn Của Bánh Kem Khiến Nó Trở Thành Một Lựa Chọn Phổ Biến Trong Các Dịp Đặc Biệt Như Sinh Nhật, Kỷ Niệm, Hay Tiệc Cưới. Bánh Kem Không Chỉ Là Một Món Tráng Miệng Ngon Mà Còn Là Biểu Tượng Của Sự Vui Tươi, Hạnh Phúc Và Sự Kỷ Niệm Đáng Nhớ.</p>
+                        </div>
+                    </div>
+                </div>
+              </div>
+        </div>
+      
+      </div>
+    <hr class="under">
+    <div class="review">
+        <div class="container-lg">
+            <h4 class="mb-4 text-center">Leave a review</h4>
+            <form class="row g-3">
+              <div class="col-md-6">
+                    <label for="message">Your Review</label>
+                    <textarea id="message" cols="30" rows="5" class="form-control"></textarea>
+                </div>
+                <div class="col-md-6"> 
+                  <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" class="form-control form-control-sm" id="name">
+                </div>
+                <div class="form-group mt-4">
+                    <label for="email">Your Email</label>
+                    <input type="email" class="form-control form-control-sm" id="email">
+                </div>
+              </div>
+               
+                <div class="col-md-12">
+                    <input type="submit" value="Leave Your Review" class="btn btn-danger px-3">
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

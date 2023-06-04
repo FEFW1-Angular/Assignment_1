@@ -1,0 +1,142 @@
+/* category */
+.category{
+    margin-top: 20px;
+}
+.underline {
+    display: flex;
+    align-items: center;
+  }
+  
+  .underline-right {
+    flex-grow: 1;
+    height: 2px;
+    background: linear-gradient(to right, red, transparent);
+  }
+  .underline-left{
+    flex-grow: 1;
+    height: 2px;
+    background: linear-gradient(to left, red, transparent);
+  }
+  
+  .underline h3 {
+    margin: 0 10px;
+  }
+  
+  .underline-left {
+    margin-right: 10px;
+  }
+  
+  .underline-right {
+    margin-left: 10px;
+  }
+  .category-title-img {
+    position: relative;
+    display: inline-block;
+}
+
+.category-title-img img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.category-title-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.category-title-text h5 {
+    margin: 0;
+    text-align: center;
+    color:red;
+}
+
+/* end category */
+
+/* product */
+.products{
+    margin-top: 50px;
+}
+.underline-red {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 25px;
+  }
+  
+  .underline-red::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 300%;
+    height: 2px;
+   background: linear-gradient(to right, red, transparent);
+  }
+  .product-item{
+    background: white;
+  }
+  .product-img {
+      width: 100%;
+      height: 222px;
+      position: relative;
+      overflow: hidden;
+    }
+  .product-img img{
+      transition: transform 1.6s ease;
+      cursor: pointer;
+    }
+    .product-img:hover img{
+      transform: scale(1.3);
+  }
+  .fit-image {
+     width: 100%;
+     height: auto;
+     object-fit: cover;
+    }
+    .product-aaas{
+      padding: 5px;
+    }
+  .product-title {
+    text-align: center;
+     padding: 5px;
+  }
+  .product-title a{
+    text-decoration: none;
+    font-size: 19px;
+    color: black;
+  
+  }
+  .product-price{
+    text-align: center;
+    padding: 5px;
+    color: red;
+  }
+  .product-cart-button{
+    text-align: center;
+    padding: 5px;
+  
+  }
+  .product-cart-button a {
+    text-decoration: none;
+    color: black;
+    background-color:rgb(255, 250, 250);
+    border: 1px solid #d7a2a2;
+    border-radius: 5px;
+    padding: 5px 10px;
+    transition: background-color 0.5s ease;
+  }
+  
+  .product-cart-button a:hover {
+    background-color: red;
+    color: #fff;
+    background-size: 0% 100%;
+    transition: background-size 0.5s ease;
+  }
+  
+  /* end product */
+  
