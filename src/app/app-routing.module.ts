@@ -21,9 +21,10 @@ const routes: Routes = [
     { path: "home", component: HomePageComponent },
     { path: "product", component: ProductPageComponent },
     { path: "product/:id", component: ProductDetailPageComponent },
-    { path: "signup", component: SignupPageComponent }
 
   ]},
+  //Signin and Signup
+  { path: "signup", component: SignupPageComponent },
 
   { path: "admin", component: AdminLayoutComponent, children: [
     { path: "", redirectTo: "dashboard", pathMatch: "full" },
