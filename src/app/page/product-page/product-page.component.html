@@ -1,49 +1,87 @@
-<p>product-page works!</p>
-<div class="container text-center">
-  <div class="row">
-    <div class="col">
-        <div class="card" style="width: 15rem;">
-            <img src="https://picsum.photos/200/200" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <h5 class="card-title">1000</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Add Cart</a>
-            </div>
+<section>
+  <div class="category">
+      <div class="container-xl">
+          <div class="catehory-text">
+              <h3 class="underline">
+                  <span class="underline-left"></span>
+                  Danh Mục
+                  <span class="underline-right"></span>
+                </h3>
+                
           </div>
-    </div>
-    <div class="col">
-        <div class="card" style="width: 15rem;">
-            <img src="https://picsum.photos/200/200" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <h5 class="card-title">1000</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Add Cart</a>
-            </div>
-          </div>
-    </div>
-    <div class="col">
-        <div class="card" style="width: 15rem;">
-            <img src="https://picsum.photos/200/200" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <h5 class="card-title">1000</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Add Cart</a>
-            </div>
-          </div>
-    </div>
-    <div class="col">
-        <div class="card" style="width: 15rem;">
-            <img src="https://picsum.photos/200/200" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <h5 class="card-title">1000</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Add Cart</a>
-            </div>
+          <div class="category-title">
+              <div class="row">
+                  <div class="col-lg-3">
+                      <a href="" class="category-title-img">
+                          <img src="https://banhsn.com/wp-content/uploads/2022/09/banh-sinh-nhat-cho-be-trai-11.jpeg.webp" alt="">
+                          <div class="category-title-text">
+                              <h5>Banh Kem</h5>
+                          </div>
+                      </a>
+                  </div>                    
+                  <div class="col-lg-3">
+                      <a href="" class="category-title-img">
+                          <img src="https://banhsn.com/wp-content/uploads/2022/09/banh-sinh-nhat-cho-be-trai-11.jpeg.webp" alt="">
+                          <div class="category-title-text">
+                              <h5>Banh Kem</h5>
+                          </div>
+                      </a>
+                  </div>
+                  <div class="col-lg-3">
+                      <a href="" class="category-title-img">
+                          <img src="https://banhsn.com/wp-content/uploads/2022/09/banh-sinh-nhat-cho-be-trai-11.jpeg.webp" alt="">
+                          <div class="category-title-text">
+                              <h5>Banh Kem</h5>
+                          </div>
+                      </a>
+                  </div>
+                  <div class="col-lg-3">
+                      <a href="" class="category-title-img">
+                          <img src="https://banhsn.com/wp-content/uploads/2022/09/banh-sinh-nhat-cho-be-trai-11.jpeg.webp" alt="">
+                          <div class="category-title-text">
+                              <h5>Banh Kem</h5>
+                          </div>
+                      </a>
+                  </div>
+              </div>                
           </div>
       </div>
+  </div>
+</section>
+
+
+<div class="products">
+  <div class="container-lg">
+    <div class="text-product">
+      <h3 class="underline-red">Bánh mỳ</h3>
+    </div>
+    <div class="row">
+      <div class="col-lg-3">
+        <img src="https://anhquanbakery.com/uploads/article/nhung-loai-banh-ngot-noi-tieng-tren-the-gioi-1591093362.jpg" alt="" style="width: 100%;">
+      </div>
+      <div class="col-lg-9">
+        <div class="row px-xl-5 pb-3 ">
+          <div class="col-lg-3 col-md-6 col-sm-12 pb-1" *ngFor="let product of products; index as i">
+            <div class="product-item mb-4 shadow-sm ">
+              <div class="product-img p-0">
+                <img [src]="product.img" alt="" class="fit-image">
+              </div>
+              <div class="product-aaas">
+                <div class="product-title">
+                  <a href="product/{{ product.id }}">{{ product.name }}</a>
+                </div>
+                <div class="product-price">{{ product.price }}
+                  <span>Đ</span>
+                </div>
+                <div class="product-cart-button">
+                  <a href="">ADD TO CART</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+       
+    </div>
   </div>
 </div>
