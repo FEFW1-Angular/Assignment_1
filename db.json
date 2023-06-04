@@ -28,6 +28,13 @@
       "email": "emailmoi@gmail.com",
       "role": "",
       "id": 2
+    },
+    {
+      "username": "testthunao",
+      "password": "Matkhautest@@@@",
+      "email": "emailtest@gmail.com",
+      "role": "",
+      "id": 3
     }
   ]
 }
