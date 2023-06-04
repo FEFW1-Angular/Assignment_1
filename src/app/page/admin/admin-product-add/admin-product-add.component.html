@@ -1,36 +1,31 @@
-<div class="alert alert-info" role="alert">
-    THÊM MỚI SẢN PHẨM
+<div class="alert alert-info" role="alert">THÊM MỚI SẢN PHẨM</div>
+<form (ngSubmit)="onHandleAdd()" [formGroup]="productForm">
+  <div class="mb-3">
+    <input
+      type="text"
+      formControlName="name"
+      placeholder="Tên"
+      class="form-control"
+    />
   </div>
-<form (ngSubmit)="onHandleAdd()">
-    <div class="mb-3">
-        <input
-            type="text"
-            [(ngModel)]="product.name"
-            name="name"
-            placeholder="Tên"
-            class="form-control"
-        />
-    </div>
-    <div class="mb-3">
-        <input
-            type="number"
-            [(ngModel)]="product.price"
-            name="price"
-            placeholder="Price"
-            class="form-control"
-        />
-    </div>
-    <div class="mb-3">
-        <input
-            type="text"
-            [(ngModel)]="product.img"
-            name="img"
-            placeholder="Ảnh"
-            class="form-control"
-        />
-    </div>
+  <div class="mb-3">
+    <input
+      type="number"
+      formControlName="price"
+      placeholder="Price"
+      class="form-control"
+    />
+  </div>
+  <div class="mb-3">
+    <input
+      type="text"
+      formControlName="image"
+      placeholder="Ảnh"
+      class="form-control"
+    />
+  </div>
 
-    <button type="submit" class="btn btn-primary bg-block btn-lg">
-        Thêm sản phẩm
-    </button>
+  <button type="submit" class="btn btn-primary bg-block btn-lg">
+    Thêm sản phẩm
+  </button>
 </form>
