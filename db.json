@@ -2,22 +2,36 @@
   "products": [
     {
       "id": 1,
-      "name": "Product 1",
-      "price": 1000,
+      "name": "Product 3",
+      "price": 10002312,
       "img": "https://picsum.photos/200/200"
     },
     {
-      "name": "product newe",
-      "price": -2000,
-      "img": "image",
+      "name": "anh hehe",
+      "price": 178623,
+      "id": 2
+    },
+    {
+      "name": "jhiuuihehe",
+      "price": 7665744,
       "id": 3
     }
   ],
   "categorys": [
     {
-      "name": "tennnnnnnnn",
-      "img": "anhhhhhhhhhh",
-      "id": 1
+      "name": "banh kemed",
+      "img": "https://picsum.photos/200/200",
+      "id": 2
+    },
+    {
+      "name": "Hà Văn Anh",
+      "img": "https://picsum.photos/200/200",
+      "id": 3
+    },
+    {
+      "name": "3 Chàng Béo Hà Văn Anh hehe",
+      "img": "https://picsum.photos/200/200",
+      "id": 4
     }
   ],
   "users": [
