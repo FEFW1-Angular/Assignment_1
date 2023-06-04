@@ -5,6 +5,12 @@
       "name": "Product 1",
       "price": 1000,
       "img": "https://picsum.photos/200/200"
+    },
+    {
+      "name": "product newe",
+      "price": -2000,
+      "img": "image",
+      "id": 3
     }
   ],
   "categorys": [
