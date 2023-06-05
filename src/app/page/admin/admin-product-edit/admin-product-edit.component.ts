@@ -25,8 +25,8 @@ export class AdminProductEditComponent {
     private router: Router) {
       
     this.route.paramMap.subscribe(param => {
-      const _id = this.route.snapshot.params['id'];
-      this.productService.getProductById(_id).subscribe(product => {
+      const id = this.route.snapshot.params['id'];
+      this.productService.getProductById(id).subscribe(product => {
         this.product = product;
         // set giá trị từ API vào input form
         this.productForm.patchValue({
@@ -46,6 +46,8 @@ export class AdminProductEditComponent {
         img: this.productForm.value.img || "",
         price: this.productForm.value.price || 0,
       }
+      console.log(newProduct);
+      
       this.productService.updateProduct(newProduct).subscribe(product => {
         alert("Cập nhật sản phẩm thành công")
         this.router.navigate(['/admin/products']);

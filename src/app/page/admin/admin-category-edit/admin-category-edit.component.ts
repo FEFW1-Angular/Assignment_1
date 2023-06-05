@@ -22,9 +22,9 @@ export class AdminCategoryEditComponent  {
     private router: Router
   ) {
     this.route.paramMap.subscribe(param => {
-      const _id = this.route.snapshot.params['id'];
-      console.log(_id);
-      this.categoryService.getCategoryById(_id).subscribe(category => {
+      const id = this.route.snapshot.params['id'];
+      console.log(id);
+      this.categoryService.getCategoryById(id).subscribe(category => {
         this.category = category;
         this.categoryForm.patchValue({
           name: this.category.name,
@@ -42,6 +42,7 @@ export class AdminCategoryEditComponent  {
         name: this.categoryForm.value.name || "",
         img: this.categoryForm.value.img || ""
       };
+      console.log(updatedCategory);
       
 
       this.categoryService.updateCategory(updatedCategory).subscribe(category => {
