@@ -1,3 +1,4 @@
+
 import mongoose from "mongoose";
 
 const productSchema = new mongoose.Schema(
@@ -7,10 +8,8 @@ const productSchema = new mongoose.Schema(
       required: true,
     },
     price: Number,
-    categoryId: {
-      type: mongoose.Types.ObjectId,
-      ref: "Category",
-    },
+    img: String,
+   
   },
   { timestamps: true, versionKey: false }
 );
