@@ -22,8 +22,9 @@ export class AdminCategoryEditComponent  {
     private router: Router
   ) {
     this.route.paramMap.subscribe(param => {
-      const id = Number(param.get('id'));
-      this.categoryService.getCategoryById(id).subscribe(category => {
+      const _id = this.route.snapshot.params['id'];
+      console.log(_id);
+      this.categoryService.getCategoryById(_id).subscribe(category => {
         this.category = category;
         this.categoryForm.patchValue({
           name: category.name,
@@ -33,18 +34,22 @@ export class AdminCategoryEditComponent  {
     })
    }
 
+
   onHandleUpdate() {
     if (this.categoryForm.valid) {
       const updatedCategory: ICategory = {
-        id: this.category.id,
+        _id: this.category._id,
         name: this.categoryForm.value.name || "",
         img: this.categoryForm.value.img || ""
       };
+      
 
       this.categoryService.updateCategory(updatedCategory).subscribe(category => {
-        alert("Thêm danh mục thành công")
-        this.router.navigate(['/admin/category']);
+        alert("Cập nhật danh mục thành công")
+        // this.router.navigate(['/admin/category']);
       });
     }
   }
+
+  
 }

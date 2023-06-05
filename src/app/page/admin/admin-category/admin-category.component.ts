@@ -19,13 +19,13 @@ export class AdminCategoryComponent {
   }
   removedItems: ICategory[] = [];
 
-  removeItem(id: any) {
-  this.categoryService.deleteCategory(id).subscribe(() => {
+  removeItem(_id: any) {
+  this.categoryService.deleteCategory(_id).subscribe(() => {
     console.log('Delete Success');
-    const removedItem = this.categorys.find(item => item.id === id);
+    const removedItem = this.categorys.find(item => item._id === _id);
     if (removedItem) {
       this.removedItems.push(removedItem);
-      this.categorys = this.categorys.filter(item => item.id !== id);
+      this.categorys = this.categorys.filter(item => item._id !== _id);
     }
   });
 }

@@ -18,8 +18,8 @@
         <td>{{ category.name }}</td>
         <td><img [src]="category.img" /></td>
         <td>
-          <button class="btn btn-danger " (click)="removeItem(category.id)!">Xóa</button>
-          <button class="btn btn-warning" routerLink="{{ category.id }}/edit" >Sửa</button>
+          <button class="btn btn-danger " (click)="removeItem(category._id)!">Xóa</button>
+          <button class="btn btn-warning" routerLink="{{ category._id }}/edit" >Sửa</button>
       </td>
       </tr>
     </tbody>
