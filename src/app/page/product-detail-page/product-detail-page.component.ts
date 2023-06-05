@@ -15,7 +15,9 @@ export class ProductDetailPageComponent {
     private route: ActivatedRoute
   ) {
     this.route.paramMap.subscribe(param => {
-      const id = Number(param.get('id'));
+      const id = this.route.snapshot.params['id'];
+      console.log(id);
+      
       this.productService.getProductById(id).subscribe(product => {
         this.product = product;
       }, error => console.log(error.message))
