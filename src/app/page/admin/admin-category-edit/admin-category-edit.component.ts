@@ -27,8 +27,8 @@ export class AdminCategoryEditComponent  {
       this.categoryService.getCategoryById(_id).subscribe(category => {
         this.category = category;
         this.categoryForm.patchValue({
-          name: category.name,
-          img: category.img
+          name: this.category.name,
+          img: this.category.img
         });
       }, error => console.log(error.message))
     })
@@ -46,7 +46,7 @@ export class AdminCategoryEditComponent  {
 
       this.categoryService.updateCategory(updatedCategory).subscribe(category => {
         alert("Cập nhật danh mục thành công")
-        // this.router.navigate(['/admin/category']);
+        this.router.navigate(['/admin/category']);
       });
     }
   }
