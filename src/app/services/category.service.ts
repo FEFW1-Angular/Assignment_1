@@ -11,19 +11,19 @@ export class CategoryService {
   constructor(private http: HttpClient) {}
   //Category
   getCategorys(): Observable<ICategory[]> {
-    return this.http.get<ICategory[]>(`http://localhost:3000/categorys`);
+    return this.http.get<ICategory[]>(`http://localhost:8080/api/categories`);
   };
 
-  deleteCategory(id: number): Observable<ICategory[]> {
-    return this.http.delete<ICategory[]>(`http://localhost:3000/categorys/${id}`,);
+  deleteCategory(_id: number): Observable<ICategory[]> {
+    return this.http.delete<ICategory[]>(`http://localhost:8080/api/categories/${_id}`,);
   }
-  getCategoryById(id: number): Observable<ICategory> {
-    return this.http.get<ICategory>(`http://localhost:3000/categorys/${id}`);
+  getCategoryById(_id: number): Observable<ICategory> {
+    return this.http.get<ICategory>(`http://localhost:8080/api/categories/${_id}`);
   }
   addCategory(category: ICategory): Observable<ICategory> {
-    return this.http.post<ICategory>(`http://localhost:3000/categorys`, category);
+    return this.http.post<ICategory>(`http://localhost:8080/api/categories`, category);
   }
   updateCategory(category : any): Observable<ICategory> {
-    return this.http.patch<ICategory>(`http://localhost:3000/categorys/${category.id}`, category);
+    return this.http.patch<ICategory>(`http://localhost:8080/api/categories/${category._id}`, category);
   }
 }

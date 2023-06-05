@@ -19,8 +19,8 @@
         <td>{{ product.price }}</td>
         <td><img [src]="product.img" /></td>
         <td>
-          <button class="btn btn-danger " (click)="removeItem(product.id)!">Xóa</button>
-          <button class="btn btn-warning" routerLink="{{ product.id }}/edit" >Sửa</button>
+          <button class="btn btn-danger " (click)="removeItem(product._id)!">Xóa</button>
+          <button class="btn btn-warning" routerLink="{{ product._id }}/edit" >Sửa</button>
       </td>
       </tr>
     </tbody>

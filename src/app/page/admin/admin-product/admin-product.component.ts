@@ -19,13 +19,13 @@ export class AdminProductComponent {
     })
   }
   
-  removeItem(id: any) {
-  this.productService.deleteProduct(id).subscribe(() => {
+  removeItem(_id: any) {
+  this.productService.deleteProduct(_id).subscribe(() => {
     console.log('Delete Success');
-    const removedProduct = this.products.find(product => product.id === id);
+    const removedProduct = this.products.find(product => product._id === _id);
     if (removedProduct) {
       this.removedProducts.push(removedProduct);
-      this.products = this.products.filter(product => product.id !== id);
+      this.products = this.products.filter(product => product._id !== _id);
     }
   });
 }
