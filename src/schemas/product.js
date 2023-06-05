@@ -10,10 +10,7 @@ const productSchema = Joi.object(
             "number.empty": "Price không được để trống",
             "any.required": 'Trường "Price" là bắt buộc',
         }),
-        categoryId: Joi.string().required().messages({
-            "string.empty": "Danh mục không được để trống",
-            "any.required": 'Trường "danh mục" là bắt buộc',
-        })
+        img: Joi.string(),
     }   
 )
 export default productSchema;
