@@ -15,7 +15,8 @@ export class AdminProductEditComponent {
   product!: IProduct;
   productForm = this.formBuilder.group({
     name: ['', [Validators.required, Validators.minLength(4)]],
-    price: [0,],
+    price: [0],
+    img:[""]
   })
   constructor(
     private productService: ProductService,
@@ -29,8 +30,9 @@ export class AdminProductEditComponent {
         this.product = product;
         // set giá trị từ API vào input form
         this.productForm.patchValue({
-          name: product.name,
-          price: product.price
+          name:this.product.name,
+          price: this.product.price,
+          img : this.product.img,
         })
       }, error => console.log(error.message))
     })
@@ -41,6 +43,7 @@ export class AdminProductEditComponent {
       const newProduct: IProduct = {
         _id: this.product._id,
         name: this.productForm.value.name || "",
+        img: this.productForm.value.img || "",
         price: this.productForm.value.price || 0,
       }
       this.productService.updateProduct(newProduct).subscribe(product => {

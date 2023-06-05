@@ -23,7 +23,7 @@ export class CategoryService {
   addCategory(category: ICategory): Observable<ICategory> {
     return this.http.post<ICategory>(`http://localhost:8080/api/categories`, category);
   }
-  updateCategory(category : any): Observable<ICategory> {
+  updateCategory(category : ICategory): Observable<ICategory> {
     return this.http.patch<ICategory>(`http://localhost:8080/api/categories/${category._id}`, category);
   }
 }
