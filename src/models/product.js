@@ -9,7 +9,10 @@ const productSchema = new mongoose.Schema(
     },
     price: Number,
     img: String,
-   
+    categoryId: {
+      type: mongoose.Types.ObjectId,
+      ref: "Category",
+  }
   },
   { timestamps: true, versionKey: false }
 );
