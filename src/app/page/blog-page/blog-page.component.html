@@ -1,0 +1,52 @@
+
+<div class="blog-content" style="margin: 20px;">
+  <div class="blog-content">
+    <div class="container-lg">
+      <div class="row">
+      <div class="blog-gg col-lg-8">
+        <div class="row" *ngFor=" let blog of  blogs ; index as i">
+          <div class="col-lg-5">
+            <div class="blog-content-img">
+              <img [src]="blog.img" alt="">
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="blog-content-item">
+              <div class="blog-content-content">
+                <h3 class="content-title"><a href="blog/{{blog._id}}">{{blog.title}}</a></h3>
+                <div class="content-text">
+                  <p>{{blog.descript_2}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr style="margin: 15px;">
+      </div>
+      </div>
+      <div class=" col-lg-4">
+        <div class="new-blog">
+          <h5 class="text-center">New Blog</h5>
+        <div class="new-blog-content">
+          <img src="https://picsum.photos/200/200" alt="">
+          <a href="">BAnhs taidc </a>
+          <hr style="margin: 15px;">
+        </div> 
+        <div class="new-blog-content">
+            <img src="https://picsum.photos/200/200" alt="">
+            <a href="">BAnhs taidc </a>
+            <hr style="margin: 15px;">
+          </div>          
+          <div class="new-blog-content">
+            <img src="https://picsum.photos/200/200" alt="">
+            <a href="">BAnhs taidc </a>
+            <hr style="margin: 15px;">
+          </div> 
+      </div>
+    </div>
+    </div>
+
+  </div>
+  
+  </div>
+
+  </div>
