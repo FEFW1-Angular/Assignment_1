@@ -23,6 +23,8 @@ import { AdminCategoryAddComponent } from './page/admin/admin-category-add/admin
 import { AdminCategoryEditComponent } from './page/admin/admin-category-edit/admin-category-edit.component';
 import { SignupPageComponent } from './page/signup-page/signup-page.component';
 import { SigninPageComponent } from './page/signin-page/signin-page.component';
+import { AdminBlogComponent } from './page/admin/admin-blog/admin-blog.component';
+import { AdminUserComponent } from './page/admin/admin-user/admin-user.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { SigninPageComponent } from './page/signin-page/signin-page.component';
     AdminCategoryAddComponent,
     AdminCategoryEditComponent,
     SignupPageComponent,
-    SigninPageComponent
+    SigninPageComponent,
+    AdminBlogComponent,
+    AdminUserComponent
   ],
   imports: [
     BrowserModule,
