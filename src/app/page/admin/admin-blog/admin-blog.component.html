@@ -14,14 +14,16 @@
          </tr>
        </thead>
        <tbody>
-         <tr>
-           <td></td>
-           <td></td>
-           <td></td>
-           <td></td>
-           <td></td>
-          
-         </tr>
+        <tr *ngFor="let blog of blogs; index as i">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ blog.title }}</td>
+          <td><img [src]="blog.img" style="width: 100%;"/></td>
+          <td> <textarea id="message" cols="27" rows="8" class="form-control" readonly>{{blog.descript_1}}</textarea></td>
+          <td>
+            <button class="btn btn-danger " (click)="removeItem(blog._id)!">Xóa</button>
+            <button class="btn btn-warning" routerLink="{{ blog._id }}/edit" >Sửa</button>
+        </td>
+        </tr>
        </tbody>
      </table>
    
