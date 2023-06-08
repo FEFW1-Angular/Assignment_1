@@ -17,6 +17,8 @@ import { SignupPageComponent } from './page/signup-page/signup-page.component';
 import { SigninPageComponent } from './page/signin-page/signin-page.component';
 import { AdminBlogComponent } from './page/admin/admin-blog/admin-blog.component';
 import { AdminUserComponent } from './page/admin/admin-user/admin-user.component';
+import { BlogPageComponent } from './page/blog-page/blog-page.component';
+import { BlogDetailPageComponent } from './page/blog-detail-page/blog-detail-page.component';
 
 const routes: Routes = [
   { path: "", component: BaseLayoutComponent, children: [
@@ -24,6 +26,8 @@ const routes: Routes = [
     { path: "home", component: HomePageComponent },
     { path: "product", component: ProductPageComponent },
     { path: "product/:id", component: ProductDetailPageComponent },
+    { path:"blog", component: BlogPageComponent},
+    { path: "blog/:id", component: BlogDetailPageComponent },
 
   ]},
   //Signin and Signup

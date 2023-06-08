@@ -25,6 +25,8 @@ import { SignupPageComponent } from './page/signup-page/signup-page.component';
 import { SigninPageComponent } from './page/signin-page/signin-page.component';
 import { AdminBlogComponent } from './page/admin/admin-blog/admin-blog.component';
 import { AdminUserComponent } from './page/admin/admin-user/admin-user.component';
+import { BlogPageComponent } from './page/blog-page/blog-page.component';
+import { BlogDetailPageComponent } from './page/blog-detail-page/blog-detail-page.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,9 @@ import { AdminUserComponent } from './page/admin/admin-user/admin-user.component
     SignupPageComponent,
     SigninPageComponent,
     AdminBlogComponent,
-    AdminUserComponent
+    AdminUserComponent,
+    BlogPageComponent,
+    BlogDetailPageComponent
   ],
   imports: [
     BrowserModule,

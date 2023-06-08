@@ -1,0 +1,29 @@
+/* newdetail */
+.newdetail-header-img {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .newdetail-header-img img {
+    max-width: 100%;
+    height: auto;
+  }
+  .newdetail-heder-title{
+      font-size: 35px;
+      color: #454545;
+      font-family: "Open Sans", sans-serif;
+      font-weight: 600;
+      padding-top: 10px;
+      padding-bottom: 10px;
+  }
+  .newdetail p{
+      color: #493f3f;
+      line-height: 35px;
+      font-weight: 300;
+      text-align: justify;
+      font-size: 17px;
+  }
+  
+  
+  /* end newdetail */
+  
