@@ -1,0 +1,39 @@
+<div class="alert alert-warning" role="alert">
+    CẬP NHẬT SẢN PHẨM
+</div>
+<form (ngSubmit)="onHandleUpdate()" [formGroup]="blogForm">
+    <div class="mb-3">
+        <h6>Tên Blog </h6>
+        <input
+          type="text"
+          formControlName="title"
+          placeholder="Tên"
+          class="form-control"
+        />
+      </div>
+      <div class="mb-3">
+        <h6>Img</h6>
+        <input
+          type="text"
+          formControlName="img"
+          placeholder="Ảnh"
+          class="form-control"
+        />
+      </div>
+      <div class="mb-3">
+        <h6>Descr1</h6>
+        <textarea 
+        formControlName="description1"
+        placeholder="Desc1"
+        class="form-control"  rows="8" ></textarea>
+      </div>
+      <div class="mb-3">
+        <h6>Descr2</h6>
+        <textarea 
+        formControlName="description2"
+        placeholder="Desc2"
+        class="form-control"  rows="8" ></textarea>
+      </div>
+
+    <button type="submit" class="btn btn-primary bg-block btn-lg" [disabled]="!blogForm.valid">Submit</button>
+</form>

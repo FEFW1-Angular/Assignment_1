@@ -19,6 +19,8 @@ import { AdminBlogComponent } from './page/admin/admin-blog/admin-blog.component
 import { AdminUserComponent } from './page/admin/admin-user/admin-user.component';
 import { BlogPageComponent } from './page/blog-page/blog-page.component';
 import { BlogDetailPageComponent } from './page/blog-detail-page/blog-detail-page.component';
+import { AdminBlogAddComponent } from './page/admin/admin-blog-add/admin-blog-add.component';
+import { AdminBlogEditComponent } from './page/admin/admin-blog-edit/admin-blog-edit.component';
 
 const routes: Routes = [
   { path: "", component: BaseLayoutComponent, children: [
@@ -44,6 +46,8 @@ const routes: Routes = [
     { path: "category/add", component: AdminCategoryAddComponent },
     { path: "category/:id/edit", component: AdminCategoryEditComponent },
     { path: "blog", component: AdminBlogComponent },
+    { path: "blog/add", component: AdminBlogAddComponent },
+    { path: "blog/:id/edit", component: AdminBlogEditComponent },
     { path: "user", component: AdminUserComponent },
   ]},
   { path: "**", component: PageNotFoundComponent }
