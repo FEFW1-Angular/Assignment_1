@@ -4,7 +4,7 @@
     <input
       type="text"
       formControlName="name"
-      placeholder="Tên"
+      placeholder="Tên sản phẩm"
       class="form-control"
     />
   </div>
@@ -24,6 +24,10 @@
       class="form-control"
     />
   </div>
+  <select class="form-select mb-5" aria-label="Default select example"formControlName="category">
+    <option selected>Chọn danh mục</option>
+    <option *ngFor="let category of categorys"   [value]="category._id">{{category.name}}</option>
+  </select>
 
   <button type="submit" class="btn btn-primary bg-block btn-lg">
     Thêm sản phẩm
