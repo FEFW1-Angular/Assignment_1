@@ -18,20 +18,21 @@ export class SignupPageComponent {
     private formBuilder: FormBuilder
   ) {
     this.signupForm = this.formBuilder.group({
-      username: ['', [Validators.required, Validators.minLength(5)]],
+      name: ['', [Validators.required, Validators.minLength(5)]],
       password: ['', [Validators.required, Validators.minLength(5)]],
+      confirmPassword: ['', [Validators.required, Validators.minLength(5)]],
       email: ['', [Validators.required, Validators.minLength(5)]],
-      role: [''],
     });
   }
 
   onSubmit() {
     if (this.signupForm.valid) {
       const user: IUser = {
-        username: this.signupForm.value.username || '',
+        name: this.signupForm.value.name || '',
         password: this.signupForm.value.password || '',
-        email: this.signupForm.value.email || '',
-        role: this.signupForm.value.role || '',
+        confirmPassword: this.signupForm.value.confirmPassword || '',
+        email: this.signupForm.value.email || ''
+
       };
 
       this.userService.addUser(user).subscribe(() => {
