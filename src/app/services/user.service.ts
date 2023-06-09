@@ -12,4 +12,7 @@ export class UserService {
   addUser(user: IUser): Observable<IUser> {
     return this.http.post<IUser>(`http://localhost:8080/api/signup`, user);
   }
+  getUsers(): Observable<IUser[]> {
+     return this.http.get<IUser[]>(`http://localhost:8080/api/users`);
+  }
 }
