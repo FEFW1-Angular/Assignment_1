@@ -3,6 +3,18 @@ import { signinSchema,signupSchema } from "../schemas/auth";
 import bcrypt from "bcrypt"
 import jwt from "jsonwebtoken";
 
+export const getAllUsers = async (req, res) => {
+  try {
+    const dataUsers = await User.find();
+    if (dataUsers.length === 0) {
+      return res.status(400).json({ message: "User not found" });
+    }
+    return res.status(200).json(dataUsers);
+  } catch (error) {
+    return res.status(400).json({ message: error.message });
+  }
+};
+
 export const signin = async (req, res) => {
   try {
     const { email, password } = req.body;
