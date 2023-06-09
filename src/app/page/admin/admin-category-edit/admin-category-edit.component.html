@@ -1,6 +1,4 @@
-<div class="alert alert-warning" role="alert">
-  CẬP NHẬT DANH MỤC
-</div>
+<div class="alert alert-warning" role="alert">CẬP NHẬT DANH MỤC</div>
 <form [formGroup]="categoryForm" (ngSubmit)="onHandleUpdate()">
   <div class="mb-3">
     <input
@@ -19,7 +17,11 @@
     />
   </div>
 
-  <button type="submit" [disabled]="categoryForm.invalid" class="btn btn-primary bg-block btn-lg">
+  <button
+    type="submit"
+    [disabled]="categoryForm.invalid"
+    class="btn btn-primary bg-block btn-lg"
+  >
     Sửa
   </button>
 </form>
