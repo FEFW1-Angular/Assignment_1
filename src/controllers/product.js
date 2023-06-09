@@ -1,4 +1,3 @@
-import Joi from "joi";
 import Product from "../models/product";
 import Category from "../models/category";
 import productSchema from "../schemas/product";

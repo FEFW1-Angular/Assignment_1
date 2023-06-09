@@ -11,6 +11,7 @@ const productSchema = Joi.object(
             "any.required": 'Trường "Price" là bắt buộc',
         }),
         img: Joi.string(),
+        categoryId: Joi.string().required(),
     }   
 )
 export default productSchema;
