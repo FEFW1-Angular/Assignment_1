@@ -11,38 +11,15 @@
           </div>
           <div class="category-title">
               <div class="row">
-                  <div class="col-lg-3">
+                  <div *ngFor="let category of categorys" class="col-lg-3">
                       <a href="" class="category-title-img">
-                          <img src="https://banhsn.com/wp-content/uploads/2022/09/banh-sinh-nhat-cho-be-trai-11.jpeg.webp" alt="">
+                          <img [src]="category.img" alt="">
                           <div class="category-title-text">
-                              <h5>Banh Kem</h5>
+                              <h5>{{category.name}}</h5>
                           </div>
                       </a>
                   </div>                    
-                  <div class="col-lg-3">
-                      <a href="" class="category-title-img">
-                          <img src="https://banhsn.com/wp-content/uploads/2022/09/banh-sinh-nhat-cho-be-trai-11.jpeg.webp" alt="">
-                          <div class="category-title-text">
-                              <h5>Banh Kem</h5>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="col-lg-3">
-                      <a href="" class="category-title-img">
-                          <img src="https://banhsn.com/wp-content/uploads/2022/09/banh-sinh-nhat-cho-be-trai-11.jpeg.webp" alt="">
-                          <div class="category-title-text">
-                              <h5>Banh Kem</h5>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="col-lg-3">
-                      <a href="" class="category-title-img">
-                          <img src="https://banhsn.com/wp-content/uploads/2022/09/banh-sinh-nhat-cho-be-trai-11.jpeg.webp" alt="">
-                          <div class="category-title-text">
-                              <h5>Banh Kem</h5>
-                          </div>
-                      </a>
-                  </div>
+                  
               </div>                
           </div>
       </div>
