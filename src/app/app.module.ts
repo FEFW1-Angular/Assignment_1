@@ -29,6 +29,7 @@ import { BlogPageComponent } from './page/blog-page/blog-page.component';
 import { BlogDetailPageComponent } from './page/blog-detail-page/blog-detail-page.component';
 import { AdminBlogAddComponent } from './page/admin/admin-blog-add/admin-blog-add.component';
 import { AdminBlogEditComponent } from './page/admin/admin-blog-edit/admin-blog-edit.component';
+import { CategoryPageComponent } from './page/category-page/category-page.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { AdminBlogEditComponent } from './page/admin/admin-blog-edit/admin-blog-
     BlogPageComponent,
     BlogDetailPageComponent,
     AdminBlogAddComponent,
-    AdminBlogEditComponent
+    AdminBlogEditComponent,
+    CategoryPageComponent
   ],
   imports: [
     BrowserModule,

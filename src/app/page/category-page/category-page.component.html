@@ -1,0 +1,33 @@
+<div class="products">
+    <div class="container-lg">
+      <div class="text-product">
+        <h3 *ngIf="category" class="underline-red">{{ category.name }}</h3>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row px-xl-5 pb-3">
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1" *ngFor="let product of getProductsByCategoryId(category?._id)">
+              <div class="product-item mb-4 shadow-sm">
+                <div class="product-img p-0">
+                  <img [src]="product.img" alt="" class="fit-image" />
+                </div>
+                <div class="product-aaas">
+                  <div class="product-title">
+                    <a href=" product/{{ product._id }}">{{ product.name }}</a>
+                  </div>
+                  <div class="product-price">
+                    {{ product.price }}
+                    <span>Đ</span>
+                  </div>
+                  <div class="product-cart-button">
+                    <a href="">ADD TO CART</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
