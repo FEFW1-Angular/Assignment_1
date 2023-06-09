@@ -14,10 +14,10 @@ export class CategoryService {
     return this.http.get<ICategory[]>(`http://localhost:8080/api/categories`);
   };
 
-  deleteCategory(_id: number): Observable<ICategory[]> {
+  deleteCategory(_id: number|string): Observable<ICategory[]> {
     return this.http.delete<ICategory[]>(`http://localhost:8080/api/categories/${_id}`,);
   }
-  getCategoryById(_id: number): Observable<ICategory> {
+  getCategoryById(_id: number|string): Observable<ICategory> {
     return this.http.get<ICategory>(`http://localhost:8080/api/categories/${_id}`);
   }
   addCategory(category: ICategory): Observable<ICategory> {

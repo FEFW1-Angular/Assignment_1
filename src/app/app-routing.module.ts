@@ -21,6 +21,7 @@ import { BlogPageComponent } from './page/blog-page/blog-page.component';
 import { BlogDetailPageComponent } from './page/blog-detail-page/blog-detail-page.component';
 import { AdminBlogAddComponent } from './page/admin/admin-blog-add/admin-blog-add.component';
 import { AdminBlogEditComponent } from './page/admin/admin-blog-edit/admin-blog-edit.component';
+import { CategoryPageComponent } from './page/category-page/category-page.component';
 
 const routes: Routes = [
   { path: "", component: BaseLayoutComponent, children: [
@@ -28,6 +29,7 @@ const routes: Routes = [
     { path: "home", component: HomePageComponent },
     { path: "product", component: ProductPageComponent },
     { path: "product/:id", component: ProductDetailPageComponent },
+    { path: "category/:id", component: CategoryPageComponent },
     { path:"blog", component: BlogPageComponent},
     { path: "blog/:id", component: BlogDetailPageComponent },
 

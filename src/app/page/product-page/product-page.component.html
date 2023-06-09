@@ -12,7 +12,7 @@
           <div class="category-title">
               <div class="row">
                   <div *ngFor="let category of categorys" class="col-lg-3">
-                      <a href="" class="category-title-img">
+                      <a href="category/{{category._id}}" class="category-title-img">
                           <img [src]="category.img" alt="">
                           <div class="category-title-text">
                               <h5>{{category.name}}</h5>
