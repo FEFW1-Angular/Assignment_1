@@ -7,3 +7,8 @@ export interface IUser
     email: string;
     role?:string
 }
+
+export interface ISigninUser{
+    email: string;
+    password: string;
+}

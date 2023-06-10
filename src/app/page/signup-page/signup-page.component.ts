@@ -37,7 +37,7 @@ export class SignupPageComponent {
 
       this.userService.addUser(user).subscribe(() => {
         alert('Đăng ký thành công');
-        this.router.navigate(['/admin/users']);
+        this.router.navigate(['/signin']);
       });
     }
   }
