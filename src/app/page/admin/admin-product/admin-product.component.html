@@ -19,7 +19,7 @@
         <td>{{ product.name }}</td>
         <td>{{ getCategoryName(product.categoryId) }}</td>
         <td>{{ product.price }}</td>
-        <td><img [src]="product.img" /></td>
+        <td><img style="width: 200px;" [src]="product.img" /></td>
         <td>
           <button class="btn btn-danger " (click)="removeItem(product._id)!">Xóa</button>
           <button class="btn btn-warning" routerLink="{{ product._id }}/edit" >Sửa</button>

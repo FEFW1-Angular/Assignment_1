@@ -16,7 +16,7 @@
       <tr *ngFor="let category of categorys; index as i">
         <th scope="row">{{ i + 1 }}</th>
         <td>{{ category.name }}</td>
-        <td><img [src]="category.img" /></td>
+        <td><img style="width: 200px;" [src]="category.img" /></td>
         <td>
           <button class="btn btn-danger " (click)="removeItem(category._id)!">Xóa</button>
           <button class="btn btn-warning" routerLink="{{ category._id }}/edit" >Sửa</button>
