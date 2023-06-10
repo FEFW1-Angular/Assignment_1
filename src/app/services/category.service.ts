@@ -25,5 +25,7 @@ export class CategoryService {
   }
   updateCategory(category : any): Observable<ICategory> {
     return this.http.patch<ICategory>(`http://localhost:8080/api/categories/${category._id}`, category);
+    console.log(category._id);
+    
   }
 }
