@@ -1,18 +1,22 @@
-<div class="alert alert-warning" role="alert">
-    CẬP NHẬT SẢN PHẨM
-</div>
+<div class="alert alert-info" role="alert">CẬP NHẬT SẢN PHẨM</div>
 <form (ngSubmit)="onHandleUpdate()" [formGroup]="productForm">
     <div class="mb-3">
-        <input type="text" formControlName="name" placeholder="Tên" class="form-control" />
+        <input type="text" formControlName="name" placeholder="Tên sản phẩm" class="form-control" />
     </div>
     <div class="mb-3">
-        <input type="number" formControlName="price" placeholder="Giá" class="form-control" />
+        <input type="number" formControlName="price" placeholder="Price" class="form-control" />
     </div>
     <div class="mb-3">
         <input type="text" formControlName="img" placeholder="Ảnh" class="form-control" />
     </div>
+    <select class="form-select mb-5" aria-label="Default select example" formControlName="category">
+    <option selected>Chọn danh mục</option>
+    <option *ngFor="let category of categorys"   [value]="category._id">{{category.name}}</option>
+    <!-- <option *ngFor="let category of categorys" [value]="category._id" [selected]="category._id === productForm.value.category">{{ category.name }}</option> -->
+    
+  </select>
 
     <button type="submit" class="btn btn-primary bg-block btn-lg">
-        Sửa
-    </button>
+    Cập nhật
+  </button>
 </form>
