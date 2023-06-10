@@ -6,7 +6,7 @@ const categorySchema = Joi.object(
             "string.empty": "Tên không được để trống",
             "any.required": 'Trường "Tên" là bắt buộc',
         }),
-        img: Joi.string().required()
+        img: Joi.string()
     }
 )
 export default categorySchema;
