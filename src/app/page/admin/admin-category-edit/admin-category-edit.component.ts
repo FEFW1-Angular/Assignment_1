@@ -14,19 +14,20 @@ export class AdminCategoryEditComponent {
     name: ['', [Validators.required, Validators.minLength(4)]],
     img: [''],
   });
-
   constructor(
-    private formBuilder: FormBuilder,
     private categoryService: CategoryService,
     private route: ActivatedRoute,
+    private formBuilder: FormBuilder,
     private router: Router
   ) {
     this.route.paramMap.subscribe((param) => {
       const id = this.route.snapshot.params['id'];
-      console.log(id);
       this.categoryService.getCategoryById(id).subscribe(
         (category) => {
           this.category = category;
+          console.log(category._id);
+          
+          // set giá trị từ API vào input form
           this.categoryForm.patchValue({
             name: this.category.name,
             img: this.category.img,
@@ -36,22 +37,21 @@ export class AdminCategoryEditComponent {
       );
     });
   }
-
   onHandleUpdate() {
+    // kiểm tra nếu form hợp lệ
     if (this.categoryForm.valid) {
-      const updatedCategory: ICategory = {
+      const newCategory: ICategory = {
         _id: this.category._id,
         name: this.categoryForm.value.name || '',
         img: this.categoryForm.value.img || '',
-      };
-      console.log(updatedCategory);
 
-      this.categoryService
-        .updateCategory(updatedCategory)
-        .subscribe((category) => {
-          alert('Cập nhật danh mục thành công');
-          this.router.navigate(['/admin/category']);
-        });
+      };
+      console.log(newCategory);
+
+      this.categoryService.updateCategory(newCategory).subscribe((category) => {
+        alert('Cập nhật danh mục thành công');
+        this.router.navigate(['/admin/category']);
+      });
     }
   }
 }
