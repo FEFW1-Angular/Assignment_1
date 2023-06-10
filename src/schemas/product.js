@@ -2,6 +2,7 @@ import Joi from "joi";
 
 const productSchema = Joi.object(
     {
+        _id: Joi.string(),
         name: Joi.string().required().min(4).messages({
             "string.empty": "Tên không được để trống",
             "any.required": 'Trường "Tên" là bắt buộc',
