@@ -22,6 +22,9 @@ import { BlogDetailPageComponent } from './page/blog-detail-page/blog-detail-pag
 import { AdminBlogAddComponent } from './page/admin/admin-blog-add/admin-blog-add.component';
 import { AdminBlogEditComponent } from './page/admin/admin-blog-edit/admin-blog-edit.component';
 import { CategoryPageComponent } from './page/category-page/category-page.component';
+import { CartPageComponent } from './page/cart-page/cart-page.component';
+import { CartLayoutComponent } from './layouts/cart-layout/cart-layout.component';
+import { BillPageComponent } from './page/bill-page/bill-page.component';
 
 const routes: Routes = [
   { path: "", component: BaseLayoutComponent, children: [
@@ -32,7 +35,12 @@ const routes: Routes = [
     { path: "category/:id", component: CategoryPageComponent },
     { path:"blog", component: BlogPageComponent},
     { path: "blog/:id", component: BlogDetailPageComponent },
+    
 
+  ]},
+  { path: "", component: CartLayoutComponent, children: [
+    { path: "carts", component: CartPageComponent },
+    { path: "carts/bill", component: BillPageComponent },
   ]},
   //Signin and Signup
   { path: "signup", component: SignupPageComponent },
