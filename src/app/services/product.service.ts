@@ -26,4 +26,9 @@ export class ProductService {
   updateProduct(product : any): Observable<IProduct> {
     return this.http.patch<IProduct>(`http://localhost:8080/api/products/${product._id}`, product);
   }
+  searchProduct(searchQuery: string): Observable<IProduct[]> {
+    return this.http.post<IProduct[]>(`http://localhost:8080/api/products/search`, {
+      searchQuery
+    })
+  }
 }
