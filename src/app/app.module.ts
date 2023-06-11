@@ -30,6 +30,9 @@ import { BlogDetailPageComponent } from './page/blog-detail-page/blog-detail-pag
 import { AdminBlogAddComponent } from './page/admin/admin-blog-add/admin-blog-add.component';
 import { AdminBlogEditComponent } from './page/admin/admin-blog-edit/admin-blog-edit.component';
 import { CategoryPageComponent } from './page/category-page/category-page.component';
+import { CartPageComponent } from './page/cart-page/cart-page.component';
+import { CartLayoutComponent } from './layouts/cart-layout/cart-layout.component';
+import { BillPageComponent } from './page/bill-page/bill-page.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +60,10 @@ import { CategoryPageComponent } from './page/category-page/category-page.compon
     BlogDetailPageComponent,
     AdminBlogAddComponent,
     AdminBlogEditComponent,
-    CategoryPageComponent
+    CategoryPageComponent,
+    CartPageComponent,
+    CartLayoutComponent,
+    BillPageComponent
   ],
   imports: [
     BrowserModule,
