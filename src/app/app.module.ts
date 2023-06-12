@@ -33,6 +33,8 @@ import { CategoryPageComponent } from './page/category-page/category-page.compon
 import { CartPageComponent } from './page/cart-page/cart-page.component';
 import { CartLayoutComponent } from './layouts/cart-layout/cart-layout.component';
 import { BillPageComponent } from './page/bill-page/bill-page.component';
+import { AdminOrderComponent } from './page/admin/admin-order/admin-order.component';
+import { AdminOrderDetailComponent } from './page/admin/admin-order-detail/admin-order-detail.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +65,9 @@ import { BillPageComponent } from './page/bill-page/bill-page.component';
     CategoryPageComponent,
     CartPageComponent,
     CartLayoutComponent,
-    BillPageComponent
+    BillPageComponent,
+    AdminOrderComponent,
+    AdminOrderDetailComponent
   ],
   imports: [
     BrowserModule,

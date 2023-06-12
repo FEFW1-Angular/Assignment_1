@@ -25,6 +25,8 @@ import { CategoryPageComponent } from './page/category-page/category-page.compon
 import { CartPageComponent } from './page/cart-page/cart-page.component';
 import { CartLayoutComponent } from './layouts/cart-layout/cart-layout.component';
 import { BillPageComponent } from './page/bill-page/bill-page.component';
+import { AdminOrderComponent } from './page/admin/admin-order/admin-order.component';
+import { AdminOrderDetailComponent } from './page/admin/admin-order-detail/admin-order-detail.component';
 
 const routes: Routes = [
   { path: "", component: BaseLayoutComponent, children: [
@@ -41,6 +43,7 @@ const routes: Routes = [
   { path: "", component: CartLayoutComponent, children: [
     { path: "carts", component: CartPageComponent },
     { path: "carts/bill", component: BillPageComponent },
+    
   ]},
   //Signin and Signup
   { path: "signup", component: SignupPageComponent },
@@ -59,6 +62,8 @@ const routes: Routes = [
     { path: "blog/add", component: AdminBlogAddComponent },
     { path: "blog/:id/edit", component: AdminBlogEditComponent },
     { path: "user", component: AdminUserComponent },
+    { path: "order", component: AdminOrderComponent },
+    { path: "order/:id", component: AdminOrderDetailComponent },
   ]},
   { path: "**", component: PageNotFoundComponent }
 ];

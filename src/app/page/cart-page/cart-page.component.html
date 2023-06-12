@@ -2,39 +2,46 @@
     <div class="container h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col">
-          <p><span class="h2">Giỏ hàng </span><span class="h4">(1 item in your cart)</span></p>
+          <p><span class="h2">Giỏ hàng </span><span class="h4">{{ totalQuantity }}</span></p>
   
-          <div class="card mb-4">
+          <div class="card mb-4"  *ngFor="let cartItem of cartItems">
             <div class="card-body p-4">
   
               <div class="row align-items-center">
                 <div class="col-md-2">
-                  <img src=""
+                  <img [src]="cartItem.product.img"
                     class="img-fluid" alt="Ảnh">
                 </div>
                 <div class="col-md-2 d-flex justify-content-center">
                   <div>
                     <p class="small text-muted mb-4 pb-2">Tên sản phẩm</p>
-                    <p class="lead fw-normal mb-0">Bánh mỳ thịt thỏ</p>
+                    <p class="lead fw-normal mb-0">{{ cartItem.product.name }}</p>
                   </div>
                 </div>
                 <div class="col-md-2 d-flex justify-content-center">
                   <div>
                     <p class="small text-muted mb-4 pb-2">Số lượng</p>
-                    <p class="lead fw-normal mb-0">10</p>
+                    <input type="number" class="form-control" min="0" [(ngModel)]="cartItem.quantity" (input)="updateCartItem(cartItem)">
                   </div>
                 </div>
                 <div class="col-md-2 d-flex justify-content-center">
                   <div>
                     <p class="small text-muted mb-4 pb-2">Giá</p>
-                    <p class="lead fw-normal mb-0">3000<span>VNĐ</span></p>
+                    <p class="lead fw-normal mb-0">{{ cartItem.product.price}}<span>VNĐ</span></p>
                   </div>
                 </div>
                 <div class="col-md-2 d-flex justify-content-center">
                   <div>
                     <p class="small text-muted mb-4 pb-2">Tổng tiền</p>
-                    <p class="lead fw-normal mb-0">3000<span>VNĐ</span></p>
+                    <p class="lead fw-normal mb-0"> {{ cartItem.totalPerItem }}<span>VNĐ</span></p>
                   </div>
+                </div>
+
+                <div class="item-remove col-md-2 d-flex justify-content-center">
+                  <!-- Xóa sản phẩm -->
+                  <button (click)="removeCartItem(cartItem)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+                    <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
+                  </svg></button>
                 </div>
               </div>
   
@@ -47,7 +54,7 @@
               <div class="float-end">
                 <p class="mb-0 me-5 d-flex align-items-center">
                   <span class="small text-muted me-2">Tổng hóa đơn</span> <span
-                    class="lead fw-normal">3000<span>VNĐ</span></span>
+                    class="lead fw-normal">{{ totalPrice }}<span>VNĐ</span></span>
                 </p>
               </div>
   
@@ -56,7 +63,9 @@
   
           <div class="d-flex justify-content-end">
             <button routerLink="/home" type="button" class="btn btn-light btn-lg me-2">Tiếp tục mua hàng</button>
-            <button routerLink="/carts/bill" type="button" class="btn btn-primary btn-lg">Xác nhận</button>
+            <button (click)="navigateToBillPage()" type="button" class="btn btn-primary btn-lg">Xác nhận</button>
+
+
           </div>
   
         </div>

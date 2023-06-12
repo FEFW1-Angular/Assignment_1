@@ -1,60 +1,41 @@
 {
-  "products": [
+  "order": [
     {
-      "id": 1,
-      "name": "Product 3",
-      "price": 10002312,
-      "img": "https://picsum.photos/200/200"
-    },
-    {
-      "name": "anh hehe",
-      "price": 178623,
-      "id": 2
-    },
-    {
-      "name": "jhiuuihehe",
-      "price": 7665744,
-      "id": 3
-    }
-  ],
-  "categorys": [
-    {
-      "name": "banh kemed",
-      "img": "https://picsum.photos/200/200",
-      "id": 2
-    },
-    {
-      "name": "Hà Văn Anh",
-      "img": "https://picsum.photos/200/200",
-      "id": 3
-    },
-    {
-      "name": "3 Chàng Béo Hà Văn Anh hehe",
-      "img": "https://picsum.photos/200/200",
-      "id": 4
-    }
-  ],
-  "users": [
-    {
-      "username": "taikhoan1234",
-      "password": "matkhau12345",
-      "email": "email@gmail.com",
-      "role": "",
-      "id": 1
-    },
-    {
-      "username": "taikhoanmoi",
-      "password": "matkhaumoi",
-      "email": "emailmoi@gmail.com",
-      "role": "",
-      "id": 2
-    },
-    {
-      "username": "testthunao",
-      "password": "Matkhautest@@@@",
-      "email": "emailtest@gmail.com",
-      "role": "",
-      "id": 3
+      "name": "Nguyễn Văn A",
+      "diachi": "Hà Nội ",
+      "email": "vana@gmail.com",
+      "sdt": 9261317138,
+      "ghichu": "nhanh ",
+      "cartbill": [
+        {
+          "product": {
+            "_id": "6483e38bbc9404a456ce6503",
+            "name": "1e414e12e",
+            "price": 12,
+            "img": "https://picsum.photos/200/200",
+            "categoryId": "647da7d1ececdd3dceab4417",
+            "createdAt": "2023-06-10T02:44:27.231Z",
+            "updatedAt": "2023-06-11T12:25:15.300Z"
+          },
+          "quantity": 43,
+          "totalPerItem": 516
+        },
+        {
+          "product": {
+            "_id": "6485647710cb90c819f1e2b2",
+            "name": "bánh mỳ",
+            "price": 5,
+            "img": "https://picsum.photos/200/200",
+            "categoryId": "647da7d1ececdd3dceab4417",
+            "createdAt": "2023-06-11T06:06:47.491Z",
+            "updatedAt": "2023-06-11T12:36:52.898Z"
+          },
+          "quantity": 15,
+          "totalPerItem": 75
+        }
+      ],
+      "totalPrice": "591",
+      "id": 16
     }
   ]
 }
