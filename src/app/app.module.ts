@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -35,6 +35,7 @@ import { CartLayoutComponent } from './layouts/cart-layout/cart-layout.component
 import { BillPageComponent } from './page/bill-page/bill-page.component';
 import { AdminOrderComponent } from './page/admin/admin-order/admin-order.component';
 import { AdminOrderDetailComponent } from './page/admin/admin-order-detail/admin-order-detail.component';
+import { AuthInterceptor } from './auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -67,16 +68,22 @@ import { AdminOrderDetailComponent } from './page/admin/admin-order-detail/admin
     CartLayoutComponent,
     BillPageComponent,
     AdminOrderComponent,
-    AdminOrderDetailComponent
+    AdminOrderDetailComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
