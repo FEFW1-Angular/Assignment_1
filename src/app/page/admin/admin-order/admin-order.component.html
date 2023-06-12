@@ -1,0 +1,29 @@
+<p>admin-order works!</p>
+
+<div class="alert alert-primary" role="alert">
+    QUẢN LÝ BLOG
+   </div>
+   <table class="table">
+       <thead>
+         <tr>
+           <th scope="col">#</th>
+           <th scope="col">Tên</th>
+           <th scope="col">Số Điện Thoại</th>
+           <th scope="col">Email</th>
+           <th scope="col">Chức năng</th>
+         </tr>
+       </thead>
+       <tbody>
+        <tr *ngFor="let order of orders; index as i">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ order.name }}</td>
+          <td>{{order.sdt}}</td>
+          <td> {{order.email}}</td>
+          <td>
+            <a routerLink="{{ order.id }}" class="btn btn-danger " >View Order</a>
+            <button class="btn btn-warning"  (click)="removeItem(order.id)!" >Xóa </button>
+        </td>
+        </tr>
+       </tbody>
+     </table>
+   

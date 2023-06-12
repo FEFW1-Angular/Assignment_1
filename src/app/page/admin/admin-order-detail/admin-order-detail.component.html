@@ -1,0 +1,47 @@
+<div class="alert alert-primary" role="alert">
+    Thông Tin người mua
+   </div>
+<div *ngIf="order">
+    <p>Tên: {{ order.name }}</p>
+    <p>Số Điện Thoại: {{ order.sdt }}</p>
+    <p>Địa chỉ : {{ order.diachi }}</p>
+    <p>Email: {{ order.email }}</p>
+    <p>Ghi Chú: {{ order.ghichu }}</p>
+  
+    <h3>Sản phẩm trong đơn hàng</h3>
+    <div class="row align-items-center" *ngFor="let item of order.cartbill">
+        <div class="col-md-2">
+            <img [src]="item.product.img"
+            class="img-fluid" alt="Ảnh">
+        </div>
+        <div class="col-md-2 d-flex justify-content-center">
+          <div>
+            <p class="small text-muted mb-4 pb-2">Tên sản phẩm</p>
+            <p class="lead fw-normal mb-0">{{ item.product.name }}</p>
+          </div>
+        </div>
+        <div class="col-md-2 d-flex justify-content-center">
+          <div>
+            <p class="small text-muted mb-4 pb-2">Số lượng</p>
+            <p class="lead fw-normal mb-0">{{ item.quantity }}</p>
+          </div>
+        </div>
+        <div class="col-md-2 d-flex justify-content-center">
+          <div>
+            <p class="small text-muted mb-4 pb-2">Giá</p>
+            <p class="lead fw-normal mb-0">{{ item.product.price }}<span>VNĐ</span></p>
+          </div>
+        </div>
+        <div class="col-md-2 d-flex justify-content-center">
+          <div>
+            <p class="small text-muted mb-4 pb-2">Tổng tiền</p>
+            <p class="lead fw-normal mb-0"> {{ item.totalPerItem }}<span>VNĐ</span></p>
+          </div>
+        </div>
+        <hr>
+    </div>
+    
+
+    <h3>Tổng giá đơn hàng: {{ order.totalPrice }} VNĐ</h3>
+  </div>
+  
