@@ -27,7 +27,7 @@ import { CartLayoutComponent } from './layouts/cart-layout/cart-layout.component
 import { BillPageComponent } from './page/bill-page/bill-page.component';
 import { AdminOrderComponent } from './page/admin/admin-order/admin-order.component';
 import { AdminOrderDetailComponent } from './page/admin/admin-order-detail/admin-order-detail.component';
-
+import { AuthGuard } from './guards/admin.guard';
 const routes: Routes = [
   { path: "", component: BaseLayoutComponent, children: [
     { path: "", redirectTo: "home", pathMatch: "full" },
@@ -49,7 +49,7 @@ const routes: Routes = [
   { path: "signup", component: SignupPageComponent },
   { path: "signin", component: SigninPageComponent },
 
-  { path: "admin", component: AdminLayoutComponent, children: [
+  { path: "admin", component: AdminLayoutComponent,canActivate: [AuthGuard] , children: [
     { path: "", redirectTo: "dashboard", pathMatch: "full" },
     { path: "dashboard", component: DashboardComponent },
     { path: "product", component: AdminProductComponent },

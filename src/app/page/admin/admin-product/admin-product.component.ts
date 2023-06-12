@@ -3,7 +3,7 @@ import { ICategory } from 'src/app/interfaces/Category';
 import { IProduct } from 'src/app/interfaces/Product';
 import { CategoryService } from 'src/app/services/category.service';
 import { ProductService } from 'src/app/services/product.service';
-
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-admin-product',
   templateUrl: './admin-product.component.html',
@@ -15,13 +15,13 @@ export class AdminProductComponent {
   categorys: ICategory[] = [];
   constructor(
     private productService: ProductService,
-    private categoryService: CategoryService
+    private categoryService: CategoryService,
+    private http: HttpClient
   ) {
     this.productService.getProducts().subscribe(
       (data) => {
         this.products = data;
         console.log(this.products);
-        
       },
       (error) => {
         console.log(error.message);
@@ -32,35 +32,38 @@ export class AdminProductComponent {
       (data) => {
         this.categorys = data;
         console.log(this.categorys);
-
       },
       (error) => {
         console.log(error.message);
       }
     );
   }
-  
-  
+
   removeItem(_id: any) {
     this.productService.deleteProduct(_id).subscribe(() => {
-      console.log('Delete Success');
-      const removedProduct = this.products.find(
-        (product) => product._id === _id
-      );
-      if (removedProduct) {
-        this.removedProducts.push(removedProduct);
-        this.products = this.products.filter((product) => product._id !== _id);
+        console.log('Delete Success');
+        const removedProduct = this.products.find(
+          (product) => product._id === _id
+        );
+        if (removedProduct) {
+          this.removedProducts.push(removedProduct);
+          this.products = this.products.filter(
+            (product) => product._id !== _id
+          );
+        }
+      },
+      (error) => {
+        console.log(error);
+        alert(error.error.message); // Hiển thị message từ server
       }
-    });
+    );
   }
 
   getCategoryName(categoryId: string | undefined) {
-    const categorys = this.categorys.find(cate => cate._id == categoryId);
-    if(categorys){
-     return categorys.name;
+    const categorys = this.categorys.find((cate) => cate._id == categoryId);
+    if (categorys) {
+      return categorys.name;
     }
-    return ''
-    
+    return '';
   }
-
 }

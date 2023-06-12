@@ -13,7 +13,7 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class AdminProductEditComponent {
   categorys: ICategory[] = [];
-  
+
   product!: IProduct;
   constructor(
     private productService: ProductService,
@@ -27,7 +27,7 @@ export class AdminProductEditComponent {
       this.productService.getProductById(id).subscribe(
         (product) => {
           this.product = product;
-          console.log(product)
+          console.log(product);
           // set giá trị từ API vào input form
           this.productForm.patchValue({
             name: this.product.name,
@@ -47,17 +47,16 @@ export class AdminProductEditComponent {
         }
       );
     });
-}
-  
+  }
+
   productForm = this.formBuilder.group({
     name: ['', [Validators.required, Validators.minLength(4)]],
     price: [0],
     img: [''],
     category: [''],
   });
-  
+
   onHandleUpdate() {
-    
     // kiểm tra nếu form hợp lệ
     if (this.productForm.valid) {
       const newProduct: IProduct = {
@@ -69,10 +68,16 @@ export class AdminProductEditComponent {
       };
       // console.log(newProduct._id);
 
-      this.productService.updateProduct(newProduct).subscribe((product) => {
-        alert('Cập nhật sản phẩm thành công');
-        this.router.navigate(['/admin/product']);
-      });
+      this.productService.updateProduct(newProduct).subscribe(
+        (product) => {
+          alert('Cập nhật sản phẩm thành công');
+          this.router.navigate(['/admin/product']);
+        },
+        (error) => {
+          console.log(error);
+          alert(error.error.message);
+        }
+      );
     }
   }
 }
