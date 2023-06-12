@@ -1,29 +1,33 @@
 <div class="alert alert-primary" role="alert">
   QUẢN LÝ SẢN PHẨM
- </div>
+</div>
 <button class="btn btn-primary" type="submit" routerLink="add">Thêm mới</button>
-<table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Tên sản phẩm</th>
-        <th scope="col">Danh mục</th>
-        <th scope="col">Giá</th>
-        <th scope="col">Ảnh</th>
-        <th scope="col">Chức năng</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let product of products; index as i">
-        <th scope="row">{{ i + 1 }}</th>
-        <td>{{ product.name }}</td>
-        <td>{{ getCategoryName(product.categoryId) }}</td>
-        <td>{{ product.price }}</td>
-        <td><img style="width: 200px;" [src]="product.img" /></td>
-        <td>
-          <button class="btn btn-danger " (click)="removeItem(product._id)!">Xóa</button>
-          <button class="btn btn-warning" routerLink="{{ product._id }}/edit" >Sửa</button>
-      </td>
-      </tr>
-    </tbody>
-  </table>
+<div style="height: 500px; overflow-y: scroll;">
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Tên sản phẩm</th>
+          <th scope="col">Danh mục</th>
+          <th scope="col">Giá</th>
+          <th scope="col">Ảnh</th>
+          <th scope="col">Chức năng</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products; index as i">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ product.name }}</td>
+          <td>{{ getCategoryName(product.categoryId) }}</td>
+          <td>{{ product.price }}</td>
+          <td><img style="width: 200px;" [src]="product.img" /></td>
+          <td>
+            <button class="btn btn-danger" (click)="removeItem(product._id)!">Xóa</button>
+            <button class="btn btn-warning" routerLink="{{ product._id }}/edit">Sửa</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
