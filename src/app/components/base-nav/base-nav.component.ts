@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { ICategory } from 'src/app/interfaces/Category';
 import { CategoryService } from 'src/app/services/category.service';
 import { Router } from '@angular/router';
@@ -10,9 +10,12 @@ import { IProduct } from 'src/app/interfaces/Product';
   styleUrls: ['./base-nav.component.scss']
 })
 export class BaseNavComponent {
+  searchResult: any=[];
   categorys: ICategory[] = [];
   products: IProduct[] = []; // Danh sách sản phẩm
   searchQuery: string = ""
+  // @Output() newItemEvent = new EventEmitter<string>();
+
   constructor(
     private categoryService: CategoryService,
      private router: Router,
@@ -39,7 +42,7 @@ export class BaseNavComponent {
       
         // this.router.navigate(['/category']);
       console.log(res)
-      
+      this.searchResult=res
     })
     
    }
